@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
+import ejs from "ejs";
 import { portfolioRoutes } from "./src/routes/portfolio/portfolio-routes.js";
 import { contactRoutes } from "./src/routes/portfolio/contact-routes.js";
 
@@ -9,13 +10,13 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 // ROUTES
-
+app.use(express.static('public'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
 app.get("/", (req, res) => {
-    res.send("Hello!")
+    res.render("index.ejs")
 })
 
 app.use('/portfolio', portfolioRoutes);
