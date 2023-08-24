@@ -1,9 +1,12 @@
 import express from "express"
-
-const router = express.Router();
 import nodemailer from "nodemailer";
 import 'dotenv/config';
 
+
+// EXPRESS
+const router = express.Router();
+
+// .ENV
 const password = process.env.GMAIL_PASSWORD;
 
 
