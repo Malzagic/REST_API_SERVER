@@ -33,10 +33,8 @@ const contactRoutes = router.post('/', (req, res) => {
 
     transporter.sendMail(mailOptions, (error, info) => {
         if(error) {
-            console.log(error);
             res.send({message: 'error'});
         } else {
-            console.log('Email send! ' + info.response)
             res.send({message: 'Success!'})
         }
     })
