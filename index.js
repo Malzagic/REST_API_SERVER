@@ -17,8 +17,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
-app.get("/", (req, res) => {
-    res.render("index.ejs")
+app.get("/", (req, res, next) => {
+    res.render("index.ejs");
+    next();
 })
 
 app.use('/portfolio', portfolioRoutes);
