@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import bodyParser from "body-parser";
-import ejs from "ejs";
+import { homeRoute } from "./src/routes/serverSite/home-route.js";
 import { portfolioRoutes } from "./src/routes/portfolio/portfolio-routes.js";
 import { contactRoutes } from "./src/routes/portfolio/contact-routes.js";
 
@@ -17,14 +17,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 
-app.get("/", (req, res, next) => {
-    res.render("index.ejs");
-    next();
-})
+app.use("/", homeRoute);
 
-app.use('/portfolio', portfolioRoutes);
+app.use("/portfolio", portfolioRoutes);
 
-app.use('/contact', contactRoutes);
+app.use("/contact", contactRoutes);
 
 
 app.listen(port, () => {
