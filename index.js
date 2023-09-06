@@ -27,7 +27,7 @@ app.use((req, res, next) => {
 
 app.use("/", homeRoute);
 
-app.use("/api/portfolio", portfolioRoutes);
+app.use("/portfolio", portfolioRoutes);
 
 app.use("/api/contact", contactRoutes);
 
