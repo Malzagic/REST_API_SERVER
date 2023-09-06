@@ -5,7 +5,7 @@ import 'dotenv/config';
 
 const router = express.Router();
 
-const portfolioRoutes = router.get("/", async (req, res) => {
+const portfolioRoutes = router.get("/portfolio", async (req, res) => {
     try {
         const url = "https://api.github.com/search/repositories?q=user:malzagic&sort=starred"
         const token = process.env.REACT_GITHUB_TOKEN;
