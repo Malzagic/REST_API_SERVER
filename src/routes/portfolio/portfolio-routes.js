@@ -18,7 +18,7 @@ const portfolioRoutes = router.get("/", async (req, res) => {
             }
         }
 
-        const response = await axios.get(url);
+        const response = await axios.get(url, options);
 
         const data = response.data.items.filter(item => {
             return item.stargazers_count > 0;
@@ -29,31 +29,5 @@ const portfolioRoutes = router.get("/", async (req, res) => {
         console.error(err)
     }
 });
-
-// const portfolioRoutes = router.post('/', async (req, res, next) => {
-//     const repo = req.body.repo
-//     console.log(repo)
-
-//     try {
-//         const url = `https://api.github.com/search/repositories?q=user:malzagic+${repo.toLowerCase()}`;
-//         const token = process.env.REACT_GITHUB_TOKEN;
-//         const options = {
-//             method: "GET",
-//             headers: {
-//                 'Access-Control-Allow-Origin': '*',
-//                 "Accept": "application/vnd.github+json",
-//                 "Authorization": `Bearer ${token}`,
-//             }
-//         }
-
-//         const response = await axios.get(url, options);
-
-//         const data = response.data;
-
-//         res.send(data)
-//     } catch (err) {
-//         console.error(err)
-//     }
-// });
 
 export { portfolioRoutes }
