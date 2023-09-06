@@ -12,7 +12,7 @@ const portfolioRoutes = router.get("/", async (req, res) => {
         const options = {
             method: "GET",
             headers: {
-                'Access-Control-Allow-Origin': '*',
+                // 'Access-Control-Allow-Origin': '*',
                 "Accept": "application/vnd.github+json",
                 "Authorization": `Bearer ${token}`,
             }
