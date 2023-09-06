@@ -19,9 +19,9 @@ app.use(cors());
 
 app.use("/", homeRoute);
 
-app.use("/portfolio", portfolioRoutes);
+app.use("/api/portfolio", portfolioRoutes);
 
-app.use("/contact", contactRoutes);
+app.use("/api/contact", contactRoutes);
 
 
 app.listen(port, () => {
