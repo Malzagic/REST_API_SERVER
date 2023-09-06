@@ -18,7 +18,6 @@ const contactRoutes = router.post('/', async (req, res) => {
 
     const validBodyForm = await emailValidation(body);
 
-    console.log(validBodyForm)
     if (validBodyForm.validation === false) {
         return res.status(200).send(validBodyForm);
     } else {
