@@ -18,6 +18,11 @@ app.use("/api/portfolio", portfolioRoutes);
 
 app.use("/api/contact", contactRoutes);
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send("Something went wrong!");
+});
+
 app.use((req, res, next) => {
   res.sendFile(path.resolve(__dirname, "public", "index.html"));
 });
