@@ -1,5 +1,6 @@
 import express from "express";
-import * as path from "path";
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
 import bodyParser from "body-parser";
 import { portfolioRoutes } from "./routes/portfolio/portfolio-routes.js";
 import { contactRoutes } from "./routes/portfolio/contact-routes.js";
@@ -7,12 +8,13 @@ import { contactRoutes } from "./routes/portfolio/contact-routes.js";
 // STARTING POINT
 const app = express();
 const port = process.env.PORT || 8000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // ROUTES
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join("public")));
-
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader(
