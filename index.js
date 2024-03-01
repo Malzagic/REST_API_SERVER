@@ -1,6 +1,7 @@
 import express from "express";
-import { fileURLToPath } from 'url';
-import { dirname } from 'path';
+import * as path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
 import bodyParser from "body-parser";
 import { portfolioRoutes } from "./routes/portfolio/portfolio-routes.js";
 import { contactRoutes } from "./routes/portfolio/contact-routes.js";
