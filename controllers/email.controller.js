@@ -1,5 +1,5 @@
 async function emailValidation(body) {
-    const { name, surname, email, message } = body;
+    const { name, surname, email, textarea } = body;
     const regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
     let isValid = {
@@ -22,7 +22,7 @@ async function emailValidation(body) {
         isValid.message = "Valid email address is required!";
     }
 
-    if (!message) {
+    if (!textarea) {
         isValid.validation = false;
         isValid.message = "Message is required!";
     }

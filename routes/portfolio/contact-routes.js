@@ -34,7 +34,7 @@ const contactRoutes = router.post('/', async (req, res) => {
             from: body.email,
             to: user, // for now i will set fake email
             subject: `Message from ${body.email}`,
-            text: body.message,
+            text: body.textarea,
         }
 
 
